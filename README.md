@@ -1,7 +1,7 @@
 # grunt-seajs-pack
 
 从seajs模块中提取依赖，并根据当前路径生成id，基于grunt-cmd-transport@0.3.0修改，去掉了配置参数，
-只根据去掉所有配置参数，根据路径生成id；
+只根据去掉所有配置参数，根据路径生成id
 
 只支持html模板和js，html模板采用ejs，同时支持模版间依赖，如有以下文件：
 
@@ -66,4 +66,28 @@ layout.html如下，其中header没有属性data-fn，只作为字串使用，�
         };
         return _.extend(tpls,fns);
    });
+```
+
+使用方法
+```js
+     grunt.loadNpmTasks('grunt-seajs-pack');
+     grunt.initConfig({
+         seajspack : {
+             seajs:{
+                 options:{
+                     //idleading:''
+                 },
+                 files:[{
+                     expand:true,
+                     src:[
+                         'views/**/*.*',
+                         'pages/**/*.*',
+                         'models/**/*.*',
+                         'tpl/**/*.*'
+                     ],
+                     dest:'dist/cacheSeajs/'
+                 }]
+             }
+         }
+     });
 ```

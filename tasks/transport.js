@@ -25,7 +25,7 @@ module.exports = function (grunt) {
         return stream.toString();
     }
 
-    grunt.registerMultiTask('transport', 'Transport everything into cmd.', function () {
+    grunt.registerMultiTask('seajspack', 'Transport everything into cmd.', function () {
 
         var options = this.options({
             alias:{},
