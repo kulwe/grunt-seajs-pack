@@ -40,7 +40,7 @@ layout.html如下，其中header没有属性data-fn，只作为字串使用，�
 
 经提取后main.js如下，依赖会进行深度分析，html也会进行深度分析
 ```js
-   define('views/file/main.js',['models/file_m.js','tpls/layout.html',views/file/main.html'],function(require,exp,mod){
+   define('views/file/main.js',['models/file_m.js','tpls/layout.html','views/file/main.html'],function(require,exp,mod){
         var model=require('models/file_m.js');
         var Tpl=require('./main.html');
    });
