@@ -1,0 +1,35 @@
+{
+  "name": "grunt-seajs-pack",
+  "description": "提取seajs依赖，生成id",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kulwe/grunt-seajs-pack",
+  "author": {
+    "name": "kule",
+    "email": "kukulwe@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kulwe/grunt-seajs-pack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kulwe/grunt-seajs-pack/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "uglify-js2": "~2.1.11",
+    "htmlparser2": "~3.8.3",
+    "underscore": "~1.8.3",
+    "html-minifier": "~0.7.2"
+  },
+  "devDependencies": {
+
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "directories": {}
+}
