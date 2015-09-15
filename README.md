@@ -5,12 +5,12 @@
 
 只支持html模板和js，html模板采用ejs，同时支持模版间依赖，如有以下文件：
 
-- views/file/mail.js
+- views/file/main.js
 - views/file/main.html
 - models/file_m.js
 - tpls/layout.html
 
-其中mail.js为
+其中main.js为
 ```js
     define(function(require,exp,mod){
         var model=require('models/file_m.js');
