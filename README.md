@@ -5,12 +5,12 @@
 
 只支持html模板和js，html模板采用ejs，同时支持模版间依赖，如有以下文件：
 
-views/file/mail.js
-views/file/main.html
-models/file_m.js
-tpls/layout.html
+- views/file/mail.js
+- views/file/main.html
+- models/file_m.js
+- tpls/layout.html
 
-###其中mail.js为
+其中mail.js为
 ```js
     define(function(require,exp,mod){
         var model=require('models/file_m.js');
@@ -18,7 +18,7 @@ tpls/layout.html
     });
 ```
 
-###main.html如下，引用了tpls/layout.html
+main.html如下，引用了tpls/layout.html
 ```
 <script type="text/template" data-tpl="fileBox" data-fn="true">
 <% var layout=seajs.require('tpls/layout.html'); %>
@@ -28,7 +28,7 @@ tpls/layout.html
 </script>
 ```
 
-###layout.html如下，其中header没有属性data-fn，只作为字串使用，不进行模板预编译footer含data-fn，将会进行模板预编译，见main.html中两者的使用方法
+layout.html如下，其中header没有属性data-fn，只作为字串使用，不进行模板预编译footer含data-fn，将会进行模板预编译，见main.html中两者的使用方法
 ```
 <script type="text/template" data-tpl="header">
     <header>头部</header>
@@ -38,14 +38,14 @@ tpls/layout.html
 </script>
 ```
 
-###经提取后main.js如下，依赖会进行深度分析，html也会进行深度分析
+经提取后main.js如下，依赖会进行深度分析，html也会进行深度分析
 ```js
    define('views/file/main.js',['models/file_m.js','tpls/layout.html',views/file/main.html'],function(require,exp,mod){
         var model=require('models/file_m.js');
         var Tpl=require('./main.html');
    });
 ```
-###经提取后main.html如下
+经提取后main.html如下
 ```js
    define('views/file/main.html',['tpls/layout.html'],function(require,exp,mod){
         var model=require('models/file_m.js');
@@ -55,7 +55,7 @@ tpls/layout.html
         }
    });
 ```
-###经提取后layout.html如下
+经提取后layout.html如下
 ```js
    define('tpls/layout.html',[],function(require,exp,mod){
         var tpls={
