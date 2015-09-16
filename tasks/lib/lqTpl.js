@@ -59,7 +59,8 @@ function html2js(code) {
         onclosetag: function(tagname){
             if(tagname === "script"){
                 if(!tplId)return;
-                var html=removeEmpty(tpl);
+                //var html=removeEmpty(tpl);
+                var html=tpl;
                 if(fn){
                     fns[tplId]=_.template(html).source;
                 }else{
